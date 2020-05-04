@@ -47,6 +47,13 @@ module.exports = {
         } catch(err) {
             console.log(err);
         }
+    },
+    deleteUser: (userId) => {
+        try {
+            db.prepare(`Delete FROM users where id= (?) LIMIT 1`).run(userId);
+        } catch(err) {
+            console.log(err);
+        }
     }
 
 }

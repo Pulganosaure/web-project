@@ -5,7 +5,7 @@ const db = require("../../db/database")
 router.get("/", (req, res) => {
     try {
         const articles = db.articles.getArticles(5);
-       //const solutions = db.
+       //const solutions = db.solutions.getSolutions(5)
         const user = (req.session.user)
             ? db.users.getUserById(req.session.user)
             : null

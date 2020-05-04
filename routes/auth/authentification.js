@@ -7,7 +7,7 @@ const saltRounds =  12;
 
 router.post("/login", async (req, res) => {
     try {
-        console.log(req.body)
+        if(req.session.user) return res.redirect("/profile")
         const user = db.users.userExist(req.body.email);
         if(!user) {
           return res.redirect("/auth/login")
@@ -27,6 +27,8 @@ router.post("/login", async (req, res) => {
 
 router.post("/register", async (req, res) => {
     try {
+        if(req.session.user) return res.redirect("/profile")
+
         const {email, username, password, passwordConfirm} = req.body;
         if(!email) return res.redirect("/auth/register?emailMissing")
         if(!username) return res.redirect("/auth/register?invalidUsername")

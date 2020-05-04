@@ -37,5 +37,14 @@ module.exports = {
             console.log(err)
             return false;
         }
+    },
+    deleteAuthorArticles: (authorId) => {
+        try {
+            db.prepare(`DELETE FROM articles WHERE authorId = (?)`).run(authorId);
+            return true;
+        } catch(err){
+            console.log(err)
+            return false;
+        }
     }
 }

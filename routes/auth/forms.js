@@ -3,6 +3,7 @@ const router = express.Router();
 
 router.get("/login", (req, res) => {
     try {
+        if(req.session.user) return res.redirect("/profile")
         res.render('authForms/login', null);
 
     } catch(err) {
@@ -13,6 +14,8 @@ router.get("/login", (req, res) => {
 
 router.get("/register", (req, res) => {
     try {
+        if(req.session.user) return res.redirect("/profile")
+
         res.render('authForms/register', null);
     } catch(err) {
         console.log(err);
