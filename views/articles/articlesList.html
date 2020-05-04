@@ -1,0 +1,30 @@
+{{> ./general/header}}
+
+<div class="row justify-content-md-center">
+      <div class="col-10 px-a mt-5 ">
+            {{#user.isJournalist}}
+            <div class="row mb-5">
+                  <button class="btn btn-secondary">écrire un article </button>
+            </div>
+            {{/user.isJournalist}}
+
+
+            {{#articles}}
+            <a class="" href="/articles/{{id}}">
+                  <div class="row border rounded mb-3">
+                        <div class="col-12">
+                              <div class="row p-2 border-bottom">
+                                    <h5>{{title}}</h5>
+                              </div>
+                              <div class="row p-2">
+                                    <p>{{content}}</p>
+                              </div>
+                        </div>
+                  </div>
+            </a>
+            {{/articles}}
+      </div>
+</div>
+
+
+{{> ./general/footer}}

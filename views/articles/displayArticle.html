@@ -1,0 +1,46 @@
+{{> ./general/header}}
+
+<div class="row justify-content-md-center">
+      <div class="col-10 px-a mt-5 border rounded">
+            <div class="row border-bottom ">
+                  <H6 class="mx-3 my-2">{{title}}</H6>
+            </div>
+            <div class="row" style="min-height: 30rem">
+                  <p class="mx-3 my-2">{{content}}</p>
+            </div>
+      </div>
+</div>
+<div class="row justify-content-md-center">
+      <div  class="col-10 px-a mt-5 border rounded">
+            <form method="post" action="/articles/{{id}}/publishComment">
+                  <div class="form-group">
+                        <label for="comment-text">Ajouter un commentaire : </label>
+                        <textarea name="comment" class="form-control" id="comment-text" rows="5"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-secondary">Publier</button>
+            </form>
+      </div>
+</div>
+<div class="row mt-5 mb-5"><div class="col">
+{{#comments}}
+      <div class="row justify-content-md-center">
+            <div class="col-10 px-a mt-3 border rounded">
+            <div class="row border-bottom">
+                  <div class="col-9">
+                        <span>{{username}}</span>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col-12">
+
+                  <p>
+                        {{text}}
+                  </p>
+                  </div>
+            </div>
+
+            </div>
+      </div >
+{{/comments}}
+</div></div>
+{{> ./general/footer}}

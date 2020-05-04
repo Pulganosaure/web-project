@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">EcoNews</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/articles">News</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/society">Sociétés</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/products">Solutions</a>
+            </li>
+        </ul>
+        {{#user.isAuthenticated}}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="profile">Profil</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="auth/logout">Déconnexion</a>
+            </li>
+        </ul>
+        {{/user.isAuthenticated}}
+        {{^user.isAuthenticated}}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="auth/register">Créer un compte</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="auth/login">Connexion</a>
+            </li>
+        </ul>
+        {{/user.isAuthenticated}}
+
+    </div>
+</nav>

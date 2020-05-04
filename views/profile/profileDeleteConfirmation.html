@@ -1,0 +1,23 @@
+{{> ./general/header}}
+<div class="row mt-5 justify-content-md-center">
+      <div class="col">
+            <div class="row justify-content-md-center">
+                  <h6>Etes vous sûr de vouloir supprimer le compte lié a {{user.email}} ?</h6>
+            </div>
+            <div class="row  justify-content-md-center">
+                  <div class="col-3 align-middle">
+                        <a href="/profile/deletion/deleteProfile">
+                              <button class="btn btn-danger">OUI</button>
+                        </a>
+                  </div>
+                  <div class="col-3 align-middle">
+                        <a href="/profile/">
+                        <button class="btn btn-success">NON</button>
+                        </a>
+                  </div>
+            </div>
+      </div>
+
+</div>
+
+{{> ./general/footer}}
